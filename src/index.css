@@ -1,0 +1,438 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-supportive-accent: var(--supportive-accent);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #F4F3EE;
+  --foreground: #1B1C1C;
+  --card: #F4F3EE;
+  --card-foreground: #1B1C1C;
+  --popover: #F4F3EE;
+  --popover-foreground: #1B1C1C;
+  --primary: #0668E2;
+  --primary-foreground: #F4F3EE;
+  --secondary: #012E2C;
+  --secondary-foreground: #F4F3EE;
+  --muted: #EAEAEA;
+  --muted-foreground: #888888;
+  --accent: #0668E2;
+  --accent-foreground: #F4F3EE;
+  --supportive-accent: #F68E1E;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #E0E0E0;
+  --input: #E0E0E0;
+  --ring: #0668E2;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+.dark {
+  --background: #1B1C1C;
+  --foreground: #F4F3EE;
+  --card: #1B1C1C;
+  --card-foreground: #F4F3EE;
+  --popover: #1B1C1C;
+  --popover-foreground: #F4F3EE;
+  --primary: #0668E2;
+  --primary-foreground: #F4F3EE;
+  --secondary: #012E2C;
+  --secondary-foreground: #F4F3EE;
+  --muted: #404040;
+  --muted-foreground: #BBBBBB;
+  --accent: #0668E2;
+  --accent-foreground: #F4F3EE;
+  --supportive-accent: #F68E1E;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #0668E2;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html, body {
+    @apply m-0 p-0 overflow-x-hidden;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@keyframes balance-lg {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-2.5deg); }
+  75% { transform: rotate(2.5deg); }
+  100% { transform: rotate(0deg); }
+}
+.animate-balance-lg {
+  animation: balance-lg 4.5s ease-in-out infinite;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.stars-small {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 10px 10px white, 20px 30px white, 40px 50px white, 60px 70px white, 80px 90px white, 100px 110px white, 120px 130px white, 140px 150px white, 160px 170px white, 180px 190px white, 200px 210px white, 220px 230px white, 240px 250px white, 260px 270px white, 280px 290px white, 300px 310px white, 320px 330px white, 340px 350px white, 360px 370px white, 380px 390px white, 400px 410px white, 420px 430px white, 440px 450px white, 460px 470px white, 480px 490px white, 500px 510px white, 520px 530px white, 540px 550px white, 560px 570px white, 580px 590px white, 600px 610px white, 620px 630px white, 640px 650px white, 660px 670px white, 680px 690px white, 700px 710px white, 720px 730px white, 740px 750px white, 760px 770px white, 780px 790px white, 800px 810px white, 820px 830px white, 840px 850px white, 860px 870px white, 880px 890px white, 900px 910px white, 920px 930px white, 940px 950px white, 960px 970px white, 980px 990px white, 1000px 1010px white, 1020px 1030px white, 1040px 1050px white, 1060px 1070px white, 1080px 1090px white, 1100px 1110px white, 1120px 1130px white, 1140px 1150px white, 1160px 1170px white, 1180px 1190px white, 1200px 1210px white, 1220px 1230px white, 1240px 1250px white, 1260px 1270px white, 1280px 1290px white, 1300px 1310px white, 1320px 1330px white, 1340px 1350px white, 1360px 1370px white, 1380px 1390px white, 1400px 1410px white, 1420px 1430px white, 1440px 1450px white, 1460px 1470px white, 1480px 1490px white, 1500px 1510px white, 1520px 1530px white, 1540px 1550px white, 1560px 1570px white, 1580px 1590px white, 1600px 1610px white, 1620px 1630px white, 1640px 1650px white, 1660px 1670px white, 1680px 1690px white, 1700px 1710px white, 1720px 1730px white, 1740px 1750px white, 1760px 1770px white, 1780px 1790px white, 1800px 1810px white, 1820px 1830px white, 1840px 1850px white, 1860px 1870px white, 1880px 1890px white, 1900px 1910px white, 1920px 1930px white, 1940px 1950px white, 1960px 1970px white, 1980px 1990px white, 2000px 2010px white;
+  animation: animStar 50s linear infinite;
+}
+
+.stars-medium {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 10px 10px white, 20px 30px white, 40px 50px white, 60px 70px white, 80px 90px white, 100px 110px white, 120px 130px white, 140px 150px white, 160px 170px white, 180px 190px white, 200px 210px white, 220px 230px white, 240px 250px white, 260px 270px white, 280px 290px white, 300px 310px white, 320px 330px white, 340px 350px white, 360px 370px white, 380px 390px white, 400px 410px white, 420px 430px white, 440px 450px white, 460px 470px white, 480px 490px white, 500px 510px white, 520px 530px white, 540px 550px white, 560px 570px white, 580px 590px white, 600px 610px white, 620px 630px white, 640px 650px white, 660px 670px white, 680px 690px white, 700px 710px white, 720px 730px white, 740px 750px white, 760px 770px white, 780px 790px white, 800px 810px white, 820px 830px white, 840px 850px white, 860px 870px white, 880px 890px white, 900px 910px white, 920px 930px white, 940px 950px white, 960px 970px white, 980px 990px white, 1000px 1010px white, 1020px 1030px white, 1040px 1050px white, 1060px 1070px white, 1080px 1090px white, 1100px 1110px white, 1120px 1130px white, 1140px 1150px white, 1160px 1170px white, 1180px 1190px white, 1200px 1210px white, 1220px 1230px white, 1240px 1250px white, 1260px 1270px white, 1280px 1290px white, 1300px 1310px white, 1320px 1330px white, 1340px 1350px white, 1360px 1370px white, 1380px 1390px white, 1400px 1410px white, 1420px 1430px white, 1440px 1450px white, 1460px 1470px white, 1480px 1490px white, 1500px 1510px white, 1520px 1530px white, 1540px 1550px white, 1560px 1570px white, 1580px 1590px white, 1600px 1610px white, 1620px 1630px white, 1640px 1650px white, 1660px 1670px white, 1680px 1690px white, 1700px 1710px white, 1720px 1730px white, 1740px 1750px white, 1760px 1770px white, 1780px 1790px white, 1800px 1810px white, 1820px 1830px white, 1840px 1850px white, 1860px 1870px white, 1880px 1890px white, 1900px 1910px white, 1920px 1930px white, 1940px 1950px white, 1960px 1970px white, 1980px 1990px white, 2000px 2010px white;
+  animation: animStar 100s linear infinite;
+}
+
+.stars-large {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 10px 10px white, 20px 30px white, 40px 50px white, 60px 70px white, 80px 90px white, 100px 110px white, 120px 130px white, 140px 150px white, 160px 170px white, 180px 190px white, 200px 210px white, 220px 230px white, 240px 250px white, 260px 270px white, 280px 290px white, 300px 310px white, 320px 330px white, 340px 350px white, 360px 370px white, 380px 390px white, 400px 410px white, 420px 430px white, 440px 450px white, 460px 470px white, 480px 490px white, 500px 510px white, 520px 530px white, 540px 550px white, 560px 570px white, 580px 590px white, 600px 610px white, 620px 630px white, 640px 650px white, 660px 670px white, 680px 690px white, 700px 710px white, 720px 730px white, 740px 750px white, 760px 770px white, 780px 790px white, 800px 810px white, 820px 830px white, 840px 850px white, 860px 870px white, 880px 890px white, 900px 910px white, 920px 930px white, 940px 950px white, 960px 970px white, 980px 990px white, 1000px 1010px white, 1020px 1030px white, 1040px 1050px white, 1060px 1070px white, 1080px 1090px white, 1100px 1110px white, 1120px 1130px white, 1140px 1150px white, 1160px 1170px white, 1180px 1190px white, 1200px 1210px white, 1220px 1230px white, 1240px 1250px white, 1260px 1270px white, 1280px 1290px white, 1300px 1310px white, 1320px 1330px white, 1340px 1350px white, 1360px 1370px white, 1380px 1390px white, 1400px 1410px white, 1420px 1430px white, 1440px 1450px white, 1460px 1470px white, 1480px 1490px white, 1500px 1510px white, 1520px 1530px white, 1540px 1550px white, 1560px 1570px white, 1580px 1590px white, 1600px 1610px white, 1620px 1630px white, 1640px 1650px white, 1660px 1670px white, 1680px 1690px white, 1700px 1710px white, 1720px 1730px white, 1740px 1750px white, 1760px 1770px white, 1780px 1790px white, 1800px 1810px white, 1820px 1830px white, 1840px 1850px white, 1860px 1870px white, 1880px 1890px white, 1900px 1910px white, 1920px 1930px white, 1940px 1950px white, 1960px 1970px white, 1980px 1990px white, 2000px 2010px white;
+  animation: animStar 150s linear infinite;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px); /* Adjust based on screen height */
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+@keyframes glow-subtle {
+  0%, 100% {
+    filter: drop-shadow(0 0 1px currentColor);
+  }
+  50% {
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+}
+.animate-glow-subtle {
+  animation: glow-subtle 2s ease-in-out infinite;
+}
+
+@keyframes button-press-subtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+}
+.animate-button-press-subtle {
+  animation: button-press-subtle 1.5s ease-in-out infinite;
+}
+
+@keyframes progress-fill {
+  0%, 100% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+}
+.animate-progress-fill {
+  animation: progress-fill 3s ease-in-out infinite;
+}
+
+@keyframes background-breathe {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+.animate-background-breathe {
+  animation: background-breathe 4s ease-in-out infinite;
+}
+
+@keyframes line-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+.animate-line-pulse {
+  animation: line-pulse 3s ease-in-out infinite;
+}
+
+@keyframes text-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}
+.animate-text-pulse {
+  animation: text-pulse 2s ease-in-out infinite;
+}
+
+@keyframes tag-jiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}
+.animate-tag-jiggle {
+  animation: tag-jiggle 1s ease-in-out infinite;
+}
+
+@keyframes icon-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-icon-rotate {
+  animation: icon-rotate 5s linear infinite;
+}
+
+@keyframes icon-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+.animate-icon-bounce {
+  animation: icon-bounce 1.2s ease-in-out infinite;
+}
+
+@keyframes glow-shadow {
+  0%, 100% {
+    box-shadow: 0 0 15px 3px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 40px 8px currentColor;
+  }
+}
+.animate-glow-shadow {
+  animation: glow-shadow 2s ease-in-out infinite;
+}
+
+@keyframes glow-primary {
+  0%, 100% {
+    box-shadow: 0 0 15px 3px rgba(6, 104, 226, 0.5); /* Celtic Blue with 0.5 opacity */
+  }
+  50% {
+    box-shadow: 0 0 40px 8px rgba(6, 104, 226, 0.7); /* Celtic Blue with 0.7 opacity */
+  }
+}
+.animate-glow-primary {
+  animation: glow-primary 2s ease-in-out infinite;
+}
+
+@keyframes glow-supportive-accent {
+  0%, 100% {
+    box-shadow: 0 0 15px 3px rgba(246, 142, 30, 0.5); /* Dark Orange with 0.5 opacity */
+  }
+  50% {
+    box-shadow: 0 0 40px 8px rgba(246, 142, 30, 0.7); /* Dark Orange with 0.7 opacity */
+  }
+}
+.animate-glow-supportive-accent {
+  animation: glow-supportive-accent 2s ease-in-out infinite;
+}
+
+@keyframes progress-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.animate-progress-flow {
+  animation: progress-flow 2s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float-sm {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float-sm {
+  animation: float-sm 2.5s ease-in-out infinite;
+}
+
+@keyframes float-lg {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float-lg {
+  animation: float-lg 3.5s ease-in-out infinite;
+}
+
+@keyframes balance {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+.animate-balance {
+  animation: balance 4s ease-in-out infinite;
+}
+
+@keyframes balance-sm {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-1.5deg); }
+  75% { transform: rotate(1.5deg); }
+  100% { transform: rotate(0deg); }
+}
+.animate-balance-sm {
+  animation: balance-sm 3.5s ease-in-out infinite;
+}
+
+@keyframes balance-lg {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-2.5deg); }
+  75% { transform: rotate(2.5deg); }
+  100% { transform: rotate(0deg); }
+}
+.animate-balance-lg {
+  animation: balance-lg 4.5s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient-shift {
+  background-size: 200% 200%; /* Make gradient larger than container */
+  animation: gradient-shift 10s ease infinite;
+}
+
+@layer utilities {
+  .bg-dots {
+    background-image: radial-gradient(currentColor 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@keyframes dots-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; } /* Moves the pattern */
+}
+.animate-dots-move {
+  animation: dots-move 20s linear infinite;
+}
