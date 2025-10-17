@@ -14,7 +14,6 @@ export function Navbar() {
           </a>
           <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
             <a href="#about">About</a>
-            <a href="#services">Services</a>
             <a href="#color-usage">Colors</a>
             <a href="#color-harmony">Harmony</a>
             <a href="#practical-examples">Examples</a>
