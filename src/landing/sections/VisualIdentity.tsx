@@ -57,12 +57,12 @@ export function VisualIdentity() {
                   <p className="text-foreground font-poppins">For headings, taglines. Rounded, geometric, and modern.</p>
                 </div>
                 <div>
-                  <p className="text-lg font-sora">Secondary Font: Sora</p>
+                  <p className="text-lg font-sora font-bold">Secondary Font: Sora</p>
                   <p className="text-foreground font-sora">For body text. Good readability.</p>
                 </div>
                 <div>
-                  <p className="text-lg">Style: Rounded, geometric, and modern with good readability.</p>
-                  <p className="text-foreground">Text casing: Prefer lowercase for the brand name (ordlabs).</p>
+                  <p className="text-lg font-poppins font-bold">Style: Rounded, geometric, and modern with good readability.</p>
+                  <p className="text-foreground font-poppins">Text casing: Prefer lowercase for the brand name (ordlabs).</p>
                 </div>
               </div>
             </div>
