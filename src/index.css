@@ -122,10 +122,13 @@
   }
   body {
     @apply bg-background text-foreground overflow-x-hidden;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sora', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
+  }
+  .font-sora {
+    font-family: 'Sora', sans-serif;
   }
 }
 

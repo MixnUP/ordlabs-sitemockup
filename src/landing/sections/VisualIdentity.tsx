@@ -54,11 +54,11 @@ export function VisualIdentity() {
               <div className="mt-4 space-y-4">
                 <div>
                   <p className="text-lg font-poppins font-bold">Primary Font: Poppins</p>
-                  <p className="text-foreground">For headings, taglines. Rounded, geometric, and modern.</p>
+                  <p className="text-foreground font-poppins">For headings, taglines. Rounded, geometric, and modern.</p>
                 </div>
                 <div>
-                  <p className="text-lg font-inter">Secondary Font: Inter or Roboto</p>
-                  <p className="text-foreground">For body text. Good readability.</p>
+                  <p className="text-lg font-sora">Secondary Font: Sora</p>
+                  <p className="text-foreground font-sora">For body text. Good readability.</p>
                 </div>
                 <div>
                   <p className="text-lg">Style: Rounded, geometric, and modern with good readability.</p>
