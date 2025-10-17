@@ -427,6 +427,18 @@
     background-image: radial-gradient(currentColor 1px, transparent 1px);
     background-size: 20px 20px;
   }
+  .radial-gradient-top-left {
+    background: radial-gradient(circle at top left, var(--primary) 0%, transparent 100%);
+  }
+  .radial-gradient-top-right {
+    background: radial-gradient(circle at top right, var(--supportive-accent) 0%, transparent 100%);
+  }
+  .radial-gradient-bottom-left {
+    background: radial-gradient(circle at bottom left, var(--secondary) 0%, transparent 100%);
+  }
+  .radial-gradient-bottom-right {
+    background: radial-gradient(circle at bottom right, var(--foreground) 0%, transparent 100%);
+  }
 }
 
 @keyframes dots-move {

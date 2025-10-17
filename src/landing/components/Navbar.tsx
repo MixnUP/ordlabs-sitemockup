@@ -13,11 +13,11 @@ export function Navbar() {
             <span className="hidden font-bold sm:inline-block font-poppins">ordlabs</span>
           </a>
           <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
-            <a href="#about">Overview</a>
-            <a href="#brand-identity">Identity</a>
-            <a href="#brand-tone">Tone</a>
-            <a href="#visual-identity">Visuals</a>
-            <a href="#founder">Founder</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#color-usage">Colors</a>
+            <a href="#color-harmony">Harmony</a>
+            <a href="#practical-examples">Examples</a>
           </nav>
         </div>
         <div className="flex items-center">
@@ -33,11 +33,11 @@ export function Navbar() {
                 <span className="font-bold font-poppins">ordlabs</span>
               </a>
               <div className="mt-6 flex flex-col space-y-4">
-                <a href="#about">Overview</a>
-                <a href="#brand-identity">Identity</a>
-                <a href="#brand-tone">Tone</a>
-                <a href="#visual-identity">Visuals</a>
-                <a href="#founder">Founder</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#color-usage">Colors</a>
+                <a href="#color-harmony">Harmony</a>
+                <a href="#practical-examples">Examples</a>
               </div>
             </SheetContent>
           </Sheet>
