@@ -14,22 +14,22 @@ export function HeroVariant6() {
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary/10 rounded-full filter blur-3xl opacity-70 animate-float-sm delay-400"></div>
 
       {/* Main Content "Floating Island" */}
-      <div className="relative z-10 max-w-4xl mx-auto p-8 md:p-12 bg-isabelline/10 rounded-xl shadow-2xl backdrop-blur-sm border border-isabelline/20 text-center animate-float-lg delay-500">
+      <div className="relative z-10 max-w-4xl mx-auto p-4 sm:p-8 md:p-12 bg-isabelline/10 rounded-xl shadow-2xl backdrop-blur-sm border border-isabelline/20 text-center animate-float-lg delay-500">
         <FadeIn delay={0}>
-          <img src={logomark} alt="OrdLabs Tertiary Logomark" className="mx-auto mb-6 w-auto h-24 object-contain filter invert" />
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-poppins text-isabelline">
+          <img src={logomark} alt="OrdLabs Tertiary Logomark" className="mx-auto mb-6 w-auto h-20 sm:h-24 object-contain filter invert" />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter font-poppins text-isabelline">
             Crafting Innovation,
             <br />
             <span className="text-primary">Empowering Businesses.</span>
           </h1>
         </FadeIn>
         <FadeIn delay={200}>
-          <p className="mx-auto mt-6 max-w-[600px] text-lg text-isabelline/80">
+          <p className="mx-auto mt-4 sm:mt-6 max-w-[600px] text-base sm:text-lg text-isabelline/80">
             We build visionary digital solutions that propel your business forward, blending cutting-edge technology with creative design.
           </p>
         </FadeIn>
         <FadeIn delay={400}>
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/30 transition-all duration-300 hover:shadow-primary/50">
               Explore Our Vision <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -42,7 +42,7 @@ export function HeroVariant6() {
 
       {/* Accent Visual - positioned to interact */}
       <FadeIn delay={600}>
-        <img src={Primary} alt="Accent Visual" className="absolute bottom-10 left-10 w-48 h-auto object-contain opacity-30 animate-pulse-subtle delay-700" />
+        <img src={Primary} alt="Accent Visual" className="hidden lg:block absolute bottom-10 left-10 w-48 h-auto object-contain opacity-30 animate-pulse-subtle delay-700" />
       </FadeIn>
     </section>
   );
